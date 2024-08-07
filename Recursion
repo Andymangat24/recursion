@@ -1,0 +1,86 @@
+//Did BOTH for EXTRA CREDIT
+
+//Excercise__1
+public int mystery(int a, int b) {
+    if (b == 1) {
+        return a; // Base case: if b is 1, return a
+    } else {
+        return a + mystery(a, b - 1); // Recursive case: add a to the result of mystery(a, b-1)
+    }
+}
+//The method mystery is a recursive method that takes two integer parameters a and b.
+//If b is equal to 1, it returns a.
+//Otherwise, it returns a plus the result of calling mystery(a, b-1).
+//This method essentially multiplies a by b without using the multiplication operator. It repeatedly adds a for b times.
+//For example:
+//mystery(3, 4) will calculate 3 + 3 + 3 + 3 which equals 12.
+
+
+
+//Excercise__2
+public int sum(int n) {
+    if (n == 0) {
+        return 0; // Base case: the sum of values from 0 to 0 is 0
+    } else {
+        return n + sum(n - 1); // Recursive call: add n to the sum of numbers from 1 to n-1
+    }
+}
+//Undefined variable a: There is no variable a defined in the method.
+//Incorrect recursive call: The method sum(n) calls itself with the same argument n, causing infinite recursion.
+//Explanation The base case is corrected to return 0 when n is 0.
+//The recursive call is corrected to call sum(n - 1) to move towards the base case.
+
+//Excercise__3
+//LCD
+public class LeastCommonDenominator {
+    public static void main(String[] args) {
+        int num1 = 4, den1 = 6; // First fraction: 4/6
+        int num2 = 3, den2 = 9; // Second fraction: 3/9
+
+        int lcd = findLCD(den1, den2); // Find the least common denominator
+        System.out.println("Least Common Denominator: " + lcd); // Print the LCD
+    }
+
+    // Recursive method to find the Greatest Common Divisor (GCD)
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a; // Base case: if b is 0, return a
+        } else {
+            return gcd(b, a % b); // Recursive case: call gcd with b and a % b
+        }
+    }
+
+    // Method to find the Least Common Denominator using GCD
+    public static int findLCD(int den1, int den2) {
+        return (den1 * den2) / gcd(den1, den2); // Calculate LCD using the formula
+    }
+}
+
+//PascalTriangle 
+public class PascalTriangle {
+    public static void main(String[] args) {
+        int rows = 5; // Example: Print 5 rows of Pascal's Triangle
+        for (int i = 0; i < rows; i++) {
+            printPascalRow(i); // Print each row
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+
+    // Method to print a specific row of Pascal's Triangle
+    public static void printPascalRow(int row) {
+        for (int i = 0; i <= row; i++) {
+            System.out.print(pascalValue(row, i) + " "); // Print each value in the row
+        }
+    }
+
+    // Recursive method to calculate the value at a specific position in Pascal's Triangle
+    public static int pascalValue(int row, int col) {
+        if (col == 0 || col == row) {
+            return 1; // Base case: The first and last elements of a row are 1
+        } else {
+            return pascalValue(row - 1, col - 1) + pascalValue(row - 1, col); // Recursive case
+        }
+    }
+}
+
+
