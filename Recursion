@@ -1,3 +1,10 @@
+//Name: Iqbal Mangat
+
+//Date: 08/04/24
+
+//Class: CS &145
+
+//Assingment Lab 6: Recursion
 //Did BOTH for EXTRA CREDIT
 
 //Excercise__1
@@ -27,7 +34,7 @@ public int sum(int n) {
 }
 //Undefined variable a: There is no variable a defined in the method.
 //Incorrect recursive call: The method sum(n) calls itself with the same argument n, causing infinite recursion.
-//Explanation The base case is corrected to return 0 when n is 0.
+//The base case is corrected to return 0 when n is 0.
 //The recursive call is corrected to call sum(n - 1) to move towards the base case.
 
 //Excercise__3
